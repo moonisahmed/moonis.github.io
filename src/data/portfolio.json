@@ -1,0 +1,93 @@
+{
+  "personal": {
+    "name": "Moonis Ahmed",
+    "title": "Full Stack Software Engineer",
+    "location": "Calgary, AB",
+    "tagline": "7 years building enterprise-grade SaaS products. From test automation to React + GraphQL features serving 100K+ users.",
+    "availability": "Open to opportunities"
+  },
+  "contact": {
+    "email": "contact@moonisahmed.com",
+    "linkedin": "https://linkedin.com/in/moonisahmed1",
+    "github": "https://github.com/moonisahmed"
+  },
+  "about": {
+    "bio": [
+      "I'm a full stack software engineer with a strong foundation in both frontend development and test automation. I've spent 7 years at Replicon and Deltek shipping end-to-end features — from technical design through production launch.",
+      "I care about code quality, developer experience, and building systems that are resilient and maintainable. Outside of coding, I'm passionate about AI tooling and leveraging it to accelerate engineering workflows.",
+      "Degree in Computer Science (Software Engineering) from the University of Calgary."
+    ],
+    "stats": [
+      { "value": "7 yrs", "label": "Hands-on industry experience" },
+      { "value": "100K+", "label": "Enterprise users served" },
+      { "value": "90%", "label": "Reduction in testing costs" },
+      { "value": "5→1", "label": "Day release cycle reduction" }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "skills": ["React", "TypeScript", "Material UI", "Webpack"]
+    },
+    {
+      "category": "Backend & APIs",
+      "skills": ["Node.js", "Apollo GraphQL", "WebSockets", "PostgreSQL"]
+    },
+    {
+      "category": "Testing",
+      "skills": ["Puppeteer", "Selenium", "Jest", "WebdriverIO"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "skills": ["AWS", "Jenkins", "CI/CD", "S3", "Lambda"]
+    },
+    {
+      "category": "AI Tools",
+      "skills": ["Claude Code", "Copilot", "MCP Servers", "Prompt Engineering"]
+    },
+    {
+      "category": "Process",
+      "skills": ["Agile", "WCAG", "LaunchDarkly", "Feature Flags"]
+    }
+  ],
+  "work": [
+    {
+      "title": "Software Engineer III · Full Stack",
+      "period": "Nov 2021 – Jan 2026",
+      "company": "Deltek (Replicon)",
+      "location": "Calgary, AB",
+      "description": "Led full-stack feature development for a professional services automation SaaS product serving enterprise clients. Worked across React, Apollo GraphQL, and AWS while collaborating with product, design, QA, and senior engineering.",
+      "bullets": [
+        "Built an AI-assisted test triage tool that reduced pipeline failure diagnosis from hours to minutes.",
+        "Upgraded the frontend and middleware stack to the latest React and Apollo/GraphQL versions with minimal disruption.",
+        "Built a modern integration testing framework and migrated legacy tests, enabling early MVP readiness.",
+        "Mentored junior developers and coordinated cross-team stakeholder handoffs for timely feature rollouts.",
+        "Won internal AI Hackathon (2025) for applied prompt engineering and AI tooling innovations."
+      ],
+      "stack": ["React", "TypeScript", "Apollo GraphQL", "AWS", "Jenkins", "CI/CD"]
+    },
+    {
+      "title": "Software Developer · Test Automation",
+      "period": "Jan 2019 – Nov 2021",
+      "company": "Replicon",
+      "location": "Calgary, AB",
+      "description": "Zero-to-one contributor on a new professional services automation product. Owned test automation infrastructure end-to-end and drove major improvements in release reliability and cost efficiency.",
+      "bullets": [
+        "Automated UI testing with Puppeteer, Selenium, and WebdriverIO — compressed the release cycle from 5 days to 1.",
+        "Migrated testing infra from BrowserStack to AWS Device Farm, cutting annual testing costs by 90%.",
+        "Led on-call incident response, running structured root cause analyses and no-blame postmortems.",
+        "Honored as Replicon MVP (Q3 2019) for measurable technical impact and team leadership."
+      ],
+      "stack": ["Jest", "Puppeteer", "Selenium", "WebdriverIO", "AWS Device Farm", "S3"]
+    },
+    {
+      "title": "Software Developer Intern",
+      "period": "Jan 2018 – Sep 2018",
+      "company": "Employment and Social Development Canada",
+      "location": "Calgary, AB",
+      "description": "Developed a community hub for ESDC managers using Node.js and the SharePoint REST API. Participated in daily scrums and release planning with stakeholders.",
+      "bullets": [],
+      "stack": ["Node.js", "SharePoint", "HTML/CSS/JS"]
+    }
+  ]
+}

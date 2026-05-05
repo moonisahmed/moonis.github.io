@@ -1,0 +1,9 @@
+export { Navbar } from './Navbar';
+export { Hero } from './Hero';
+export { About } from './About';
+export { Stats } from './Stats';
+export { Skills } from './Skills';
+export { Work } from './Work';
+export { WorkCard } from './WorkCard';
+export { Contact } from './Contact';
+export { Footer } from './Footer';
