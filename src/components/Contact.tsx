@@ -31,7 +31,7 @@ export function Contact({ contact, location }: ContactProps) {
             <span className="sr-only"> (opens in new tab)</span>
           </a>
         </div>
-        <p className="contact-location">Based in {location} 🇨🇦</p>
+        <p className="contact-location">Based in {location} <span aria-label="Canada" role="img">🇨🇦</span></p>
       </div>
     </section>
   );
