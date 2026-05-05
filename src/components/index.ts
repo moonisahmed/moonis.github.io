@@ -7,3 +7,4 @@ export { Work } from './Work';
 export { WorkCard } from './WorkCard';
 export { Contact } from './Contact';
 export { Footer } from './Footer';
+export { ErrorBoundary } from './ErrorBoundary';

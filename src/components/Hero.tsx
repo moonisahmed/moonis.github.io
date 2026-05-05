@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Personal, Contact } from '../types/portfolio';
 
 interface HeroProps {
@@ -6,26 +7,40 @@ interface HeroProps {
 }
 
 export function Hero({ personal, contact }: HeroProps) {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section id="hero" className="hero" aria-labelledby="hero-title">
       <div className="hero-header">
-        <img
-          src="/photo.jpg"
-          alt={`Photo of ${personal.name}`}
-          className="hero-photo"
-          width={140}
-          height={140}
-        />
+        {!imageError ? (
+          <img
+            src="/photo.jpg"
+            alt={`Photo of ${personal.name}`}
+            className={`hero-photo${imageLoaded ? ' loaded' : ''}`}
+            width={140}
+            height={140}
+            loading="eager"
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="hero-photo hero-photo-fallback" aria-hidden="true">
+            {personal.name.charAt(0)}
+          </div>
+        )}
         <div>
           <p className="eyebrow">
             {personal.location} · {personal.availability}
           </p>
-          <h1 id="hero-title">{personal.title.replace('Software Engineer', 'Software\nEngineer').split('\n').map((line, i) => (
-            <span key={i}>
-              {line}
-              {i === 0 && <br aria-hidden="true" />}
-            </span>
-          ))}</h1>
+          <h1 id="hero-title">
+            {personal.titleDisplay.map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < personal.titleDisplay.length - 1 && <br aria-hidden="true" />}
+              </span>
+            ))}
+          </h1>
         </div>
       </div>
       <p className="tagline">{personal.tagline}</p>

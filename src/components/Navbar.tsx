@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 
 interface NavbarProps {
   name: string;
@@ -6,6 +6,7 @@ interface NavbarProps {
 
 export function Navbar({ name }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -15,7 +16,7 @@ export function Navbar({ name }: NavbarProps) {
     setIsOpen(false);
   }, []);
 
-  // Close menu on Escape key
+  // Close menu on Escape key or outside click
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
@@ -23,14 +24,26 @@ export function Navbar({ name }: NavbarProps) {
       }
     };
 
+    const handleClickOutside = (e: MouseEvent) => {
+      if (isOpen && navRef.current && !navRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
     document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [isOpen]);
 
   return (
-    <nav className="nav" aria-label="Main navigation">
+    <nav ref={navRef} className="nav" aria-label="Main navigation">
       <div className="nav-inner">
-        <a href="#hero" className="nav-name" aria-label={`${name} - Go to top`}>
+        <a href="#hero" className="nav-name">
+          <span className="sr-only">Go to top - </span>
           {name}
         </a>
         <button
@@ -42,15 +55,11 @@ export function Navbar({ name }: NavbarProps) {
         >
           <span aria-hidden="true" />
         </button>
-        <div
-          id="nav-menu"
-          className={`nav-links${isOpen ? ' open' : ''}`}
-          role="menubar"
-        >
-          <a href="#about" role="menuitem" onClick={closeMenu}>About</a>
-          <a href="#work" role="menuitem" onClick={closeMenu}>Work</a>
-          <a href="#contact" role="menuitem" onClick={closeMenu}>Contact</a>
-        </div>
+        <ul id="nav-menu" className={`nav-links${isOpen ? ' open' : ''}`}>
+          <li><a href="#about" onClick={closeMenu}>About</a></li>
+          <li><a href="#work" onClick={closeMenu}>Work</a></li>
+          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+        </ul>
       </div>
     </nav>
   );

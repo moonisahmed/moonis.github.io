@@ -9,7 +9,12 @@ export function WorkCard({ work }: WorkCardProps) {
     <article className="work-card" role="listitem">
       <header className="work-header">
         <h3 className="work-title">{work.title}</h3>
-        <time className="work-period">{work.period}</time>
+        <time
+          className="work-period"
+          dateTime={`${work.startDate}/${work.endDate}`}
+        >
+          {work.period}
+        </time>
       </header>
       <p className="work-company">
         {work.company} · {work.location}
@@ -22,13 +27,13 @@ export function WorkCard({ work }: WorkCardProps) {
           ))}
         </ul>
       )}
-      <div className="work-stack" aria-label="Technologies used">
+      <ul className="work-stack" aria-label="Technologies used">
         {work.stack.map((tech, index) => (
-          <span key={index} className="tag">
+          <li key={index} className="tag">
             {tech}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </article>
   );
 }

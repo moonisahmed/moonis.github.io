@@ -2,6 +2,7 @@
   "personal": {
     "name": "Moonis Ahmed",
     "title": "Full Stack Software Engineer",
+    "titleDisplay": ["Full Stack", "Software Engineer"],
     "location": "Calgary, AB",
     "tagline": "7 years building enterprise-grade SaaS products. From test automation to React + GraphQL features serving 100K+ users.",
     "availability": "Open to opportunities"
@@ -54,6 +55,8 @@
     {
       "title": "Software Engineer III · Full Stack",
       "period": "Nov 2021 – Jan 2026",
+      "startDate": "2021-11",
+      "endDate": "2026-01",
       "company": "Deltek (Replicon)",
       "location": "Calgary, AB",
       "description": "Led full-stack feature development for a professional services automation SaaS product serving enterprise clients. Worked across React, Apollo GraphQL, and AWS while collaborating with product, design, QA, and senior engineering.",
@@ -69,6 +72,8 @@
     {
       "title": "Software Developer · Test Automation",
       "period": "Jan 2019 – Nov 2021",
+      "startDate": "2019-01",
+      "endDate": "2021-11",
       "company": "Replicon",
       "location": "Calgary, AB",
       "description": "Zero-to-one contributor on a new professional services automation product. Owned test automation infrastructure end-to-end and drove major improvements in release reliability and cost efficiency.",
@@ -83,6 +88,8 @@
     {
       "title": "Software Developer Intern",
       "period": "Jan 2018 – Sep 2018",
+      "startDate": "2018-01",
+      "endDate": "2018-09",
       "company": "Employment and Social Development Canada",
       "location": "Calgary, AB",
       "description": "Developed a community hub for ESDC managers using Node.js and the SharePoint REST API. Participated in daily scrums and release planning with stakeholders.",
