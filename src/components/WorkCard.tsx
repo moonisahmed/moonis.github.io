@@ -1,4 +1,5 @@
 import type { WorkExperience } from '../types/portfolio';
+import { SkillIcon } from '../utils/skillIcons';
 
 interface WorkCardProps {
   work: WorkExperience;
@@ -30,6 +31,7 @@ export function WorkCard({ work }: WorkCardProps) {
       <ul className="work-stack" aria-label="Technologies used">
         {work.stack.map((tech, index) => (
           <li key={index} className="tag">
+            <SkillIcon skill={tech} className="tag-icon" />
             {tech}
           </li>
         ))}

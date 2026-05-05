@@ -1,4 +1,5 @@
 import type { SkillGroup } from '../types/portfolio';
+import { SkillIcon } from '../utils/skillIcons';
 
 interface SkillsProps {
   skills: SkillGroup[];
@@ -14,6 +15,7 @@ export function Skills({ skills }: SkillsProps) {
             <ul className="skill-tags" aria-label={`${group.category} skills`}>
               {group.skills.map((skill, skillIndex) => (
                 <li key={skillIndex} className="tag">
+                  <SkillIcon skill={skill} className="tag-icon" />
                   {skill}
                 </li>
               ))}

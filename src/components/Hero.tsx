@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaLinkedinIn, FaGithub, FaEnvelope, FaBriefcase } from 'react-icons/fa6';
 import type { Personal, Contact } from '../types/portfolio';
 
 interface HeroProps {
@@ -45,13 +46,17 @@ export function Hero({ personal, contact }: HeroProps) {
       </div>
       <p className="tagline">{personal.tagline}</p>
       <div className="hero-links" role="group" aria-label="Quick links">
-        <a href="#work" className="btn btn-primary">View my work</a>
+        <a href="#work" className="btn btn-primary">
+          <FaBriefcase className="btn-icon" aria-hidden="true" />
+          View my work
+        </a>
         <a
           href={contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="btn"
         >
+          <FaLinkedinIn className="btn-icon" aria-hidden="true" />
           LinkedIn
           <span className="sr-only"> (opens in new tab)</span>
         </a>
@@ -61,10 +66,12 @@ export function Hero({ personal, contact }: HeroProps) {
           rel="noopener noreferrer"
           className="btn"
         >
+          <FaGithub className="btn-icon" aria-hidden="true" />
           GitHub
           <span className="sr-only"> (opens in new tab)</span>
         </a>
         <a href={`mailto:${contact.email}`} className="btn">
+          <FaEnvelope className="btn-icon" aria-hidden="true" />
           Email me
         </a>
       </div>

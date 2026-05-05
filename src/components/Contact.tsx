@@ -1,3 +1,4 @@
+import { FaEnvelope, FaLinkedinIn } from 'react-icons/fa6';
 import type { Contact as ContactType, Personal } from '../types/portfolio';
 
 interface ContactProps {
@@ -16,6 +17,7 @@ export function Contact({ contact, location }: ContactProps) {
         </p>
         <div className="contact-links" role="group" aria-label="Contact options">
           <a href={`mailto:${contact.email}`} className="btn btn-primary">
+            <FaEnvelope className="btn-icon" aria-hidden="true" />
             {contact.email}
           </a>
           <a
@@ -24,6 +26,7 @@ export function Contact({ contact, location }: ContactProps) {
             rel="noopener noreferrer"
             className="btn"
           >
+            <FaLinkedinIn className="btn-icon" aria-hidden="true" />
             LinkedIn
             <span className="sr-only"> (opens in new tab)</span>
           </a>
