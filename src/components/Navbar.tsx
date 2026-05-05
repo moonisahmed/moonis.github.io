@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
+import { FaMoon, FaSun } from 'react-icons/fa6';
 
 interface NavbarProps {
   name: string;
@@ -6,6 +7,10 @@ interface NavbarProps {
 
 export function Navbar({ name }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  });
   const navRef = useRef<HTMLElement>(null);
 
   const toggleMenu = useCallback(() => {
@@ -15,6 +20,20 @@ export function Navbar({ name }: NavbarProps) {
   const closeMenu = useCallback(() => {
     setIsOpen(false);
   }, []);
+
+  const toggleTheme = useCallback(() => {
+    setIsDark((prev) => {
+      const newTheme = !prev;
+      localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+      return newTheme;
+    });
+  }, []);
+
+  // Set initial theme
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  }, [isDark]);
 
   // Close menu on Escape key or outside click
   useEffect(() => {
@@ -46,15 +65,24 @@ export function Navbar({ name }: NavbarProps) {
           <span className="sr-only">Go to top - </span>
           {name}
         </a>
-        <button
-          className="nav-toggle"
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isOpen}
-          aria-controls="nav-menu"
-          onClick={toggleMenu}
-        >
-          <span aria-hidden="true" />
-        </button>
+        <div className="nav-controls">
+          <button
+            className="theme-toggle"
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            onClick={toggleTheme}
+          >
+            {isDark ? <FaSun /> : <FaMoon />}
+          </button>
+          <button
+            className="nav-toggle"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            aria-controls="nav-menu"
+            onClick={toggleMenu}
+          >
+            <span aria-hidden="true" />
+          </button>
+        </div>
         <ul id="nav-menu" className={`nav-links${isOpen ? ' open' : ''}`}>
           <li><a href="#about" onClick={closeMenu}>About</a></li>
           <li><a href="#work" onClick={closeMenu}>Work</a></li>

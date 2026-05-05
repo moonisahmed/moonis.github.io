@@ -22,7 +22,7 @@ function App() {
         <Work work={data.work} />
         <Contact contact={data.contact} location={data.personal.location} />
       </main>
-      <Footer name={data.personal.name} />
+      <Footer name={data.personal.name} contact={data.contact} />
     </ErrorBoundary>
   );
 }
