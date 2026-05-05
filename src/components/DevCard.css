@@ -1,0 +1,135 @@
+.dev-card {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+}
+
+/* Section 1 — top row */
+.dev-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dev-card-avatar-wrapper {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.dev-card-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #30363d;
+  display: block;
+}
+
+.dev-card-pip {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #1d9e75;
+  border-radius: 50%;
+  border: 2px solid #0d1117;
+}
+
+.dev-card-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e6edf3;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.dev-card-handle {
+  font-size: 11px;
+  color: #8b949e;
+  font-family: monospace;
+  margin: 0;
+}
+
+/* Section 2 — activity bars */
+.dev-card-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 32px;
+}
+
+.dev-card-bar {
+  flex: 1;
+  background: #1d9e75;
+  border-radius: 2px 2px 0 0;
+  transform-origin: bottom;
+}
+
+/* Section 3 — tech tags */
+.dev-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.dev-card-tag {
+  font-size: 9px;
+  font-family: monospace;
+  color: #58a6ff;
+  background: rgba(55, 138, 221, 0.12);
+  border: 0.5px solid rgba(55, 138, 221, 0.25);
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+/* Animations — only when the user is OK with motion */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pip-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(29, 158, 117, 0.55);
+    }
+    50% {
+      box-shadow: 0 0 0 4px transparent;
+    }
+  }
+
+  .dev-card-pip {
+    animation: pip-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes bar-grow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  .dev-card-bar {
+    animation: bar-grow 0.8s ease-out both;
+  }
+
+  @keyframes tag-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dev-card-tag {
+    animation: tag-in 0.4s ease both;
+  }
+}

@@ -1,8 +1,8 @@
-import { useState } from 'react';
 import { FaLinkedinIn, FaGithub, FaEnvelope, FaBriefcase } from 'react-icons/fa6';
 import type { Personal, Contact } from '../types/portfolio';
 import { useInView } from '../hooks/useInView';
 import { useRef } from 'react';
+import { DevCard } from './DevCard';
 
 interface HeroProps {
   personal: Personal;
@@ -10,35 +10,13 @@ interface HeroProps {
 }
 
 export function Hero({ personal, contact }: HeroProps) {
-  const [imageError, setImageError] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { threshold: 0.15 });
 
   return (
     <section ref={ref} id="hero" className={`hero ${inView ? 'in-view' : ''}`} aria-labelledby="hero-title">
       <div className="hero-header">
-        <div className="photo-wrapper">
-          <div className="ring ring-outer"></div>
-          <div className="ring ring-inner"></div>
-          {!imageError ? (
-            <img
-              src="/photo.jpg"
-              alt={`Photo of ${personal.name}`}
-              className={`hero-photo${imageLoaded ? ' loaded' : ''}`}
-              width={140}
-              height={140}
-              loading="eager"
-              onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
-            />
-          ) : (
-            <div className="hero-photo hero-photo-fallback" aria-hidden="true">
-              {personal.name.charAt(0)}
-            </div>
-          )}
-          <div className="pulse-dot"></div>
-        </div>
+        <DevCard />
         <div>
           <p className="eyebrow">
             {personal.location} · {personal.availability}
