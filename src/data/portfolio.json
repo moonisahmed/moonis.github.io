@@ -14,9 +14,9 @@
   },
   "about": {
     "bio": [
-      "I'm a full stack software engineer with a strong foundation in both frontend development and test automation. I've spent 7 years at Replicon and Deltek shipping end-to-end features — from technical design through production launch.",
+      "I'm a full-stack software engineer with a strong foundation in both frontend development and test automation. I've spent 7 years at Replicon and Deltek shipping end-to-end features — from technical design through production launch.",
       "I care about code quality, developer experience, and building systems that are resilient and maintainable. Outside of coding, I'm passionate about AI tooling and leveraging it to accelerate engineering workflows.",
-      "Degree in Computer Science (Software Engineering) from the University of Calgary."
+      "Bachelor's degree in Computer Science (Software Engineering) from the University of Calgary."
     ],
     "stats": [
       { "value": "7 yrs", "label": "Hands-on industry experience" },
@@ -76,10 +76,10 @@
       "endDate": "2021-11",
       "company": "Replicon",
       "location": "Calgary, AB",
-      "description": "Zero-to-one contributor on a new professional services automation product. Owned test automation infrastructure end-to-end and drove major improvements in release reliability and cost efficiency.",
+      "description": "Zero-to-one contributor to a new professional services automation product. Owned test automation infrastructure end-to-end and drove major improvements in release reliability and cost efficiency.",
       "bullets": [
-        "Automated UI testing with Puppeteer, Selenium, and WebdriverIO — compressed the release cycle from 5 days to 1.",
-        "Migrated testing infra from BrowserStack to AWS Device Farm, cutting annual testing costs by 90%.",
+        "Automated UI testing with Puppeteer, Selenium, and WebdriverIO — compressed the release cycle from five days to one.",
+        "Migrated testing infrastructure from BrowserStack to AWS Device Farm, cutting annual testing costs by 90%.",
         "Led on-call incident response, running structured root cause analyses and no-blame postmortems.",
         "Honored as Replicon MVP (Q3 2019) for measurable technical impact and team leadership."
       ],
