@@ -6,13 +6,13 @@ interface StatsProps {
 
 export function Stats({ stats }: StatsProps) {
   return (
-    <div className="stats">
+    <dl className="stats">
       {stats.map((stat, index) => (
         <div key={index}>
-          <div className="stat-val">{stat.value}</div>
-          <div className="stat-label">{stat.label}</div>
+          <dd className="stat-val">{stat.value}</dd>
+          <dt className="stat-label">{stat.label}</dt>
         </div>
       ))}
-    </div>
+    </dl>
   );
 }

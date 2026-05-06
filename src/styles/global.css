@@ -172,9 +172,14 @@ img {
   text-decoration: none;
 }
 
-.nav-name:hover,
-.nav-name:focus {
+.nav-name:hover {
   color: var(--muted);
+}
+
+.nav-name:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .nav-links {
@@ -420,12 +425,6 @@ img {
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
-}
-
-
-.btn:focus-visible {
   background: var(--bg2);
   border-color: var(--focus-ring);
   outline: 2px solid var(--focus-ring);
@@ -440,9 +439,9 @@ img {
 }
 
 [data-theme="dark"] .btn-primary {
-  background: #4a9eff;
+  background: #2563eb;
   color: #fff;
-  border-color: #4a9eff;
+  border-color: #2563eb;
 }
 
 .btn-primary:hover,
@@ -455,8 +454,8 @@ img {
 
 [data-theme="dark"] .btn-primary:hover,
 [data-theme="dark"] .btn-primary:active {
-  background: #2a7fff;
-  border-color: #2a7fff;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
@@ -468,8 +467,8 @@ img {
 }
 
 [data-theme="dark"] .btn-primary:focus-visible {
-  background: #2a7fff;
-  border-color: #2a7fff;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
 }
 
 /* Brand-specific hover colors for contact links */
@@ -724,6 +723,11 @@ img {
 .footer-link:hover,
 .footer-link:active {
   transform: scale(1.1);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 /* Error Page */
